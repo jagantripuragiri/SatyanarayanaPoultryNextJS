@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
@@ -12,12 +15,31 @@ const NAV_LINKS = [
 ];
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className={styles.header}>
       <h1 className={styles.logo}>Satyanarayana Poultry Farm</h1>
-      <nav className={styles.nav} aria-label="Main navigation">
+      <button
+        type="button"
+        className={`${styles.toggle} ${open ? styles.toggleOpen : ""}`}
+        aria-label={open ? "Close menu" : "Open menu"}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span className={styles.toggleIcon} aria-hidden="true" />
+      </button>
+      <nav
+        className={`${styles.nav} ${open ? styles.navOpen : ""}`}
+        aria-label="Main navigation"
+      >
         {NAV_LINKS.map(({ href, label }) => (
-          <Link key={href} href={href} className={styles.navLink}>
+          <Link
+            key={href}
+            href={href}
+            className={styles.navLink}
+            onClick={() => setOpen(false)}
+          >
             {label}
           </Link>
         ))}
