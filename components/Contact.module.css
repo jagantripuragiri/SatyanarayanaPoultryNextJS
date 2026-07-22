@@ -3,44 +3,82 @@
   background: var(--clr-bg);
 }
 
-.card {
-  max-width: 680px;
+.subtitle {
+  text-align: center;
+  color: var(--clr-text-muted);
+  max-width: 520px;
+  margin: -1.75rem auto 2.5rem;
+  font-size: 0.98rem;
+}
+
+.grid {
+  max-width: var(--container-max);
   margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
   background: var(--clr-surface);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
-  padding: 48px 40px;
-  text-align: center;
+  padding: 40px 28px;
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 18px;
-  font-size: 1rem;
-  color: var(--clr-text);
-}
-
-.item:last-child {
-  margin-bottom: 0;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .icon {
-  font-size: 1.3rem;
-  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--clr-warm);
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+}
+
+.value {
+  color: var(--clr-text);
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
 
 .link {
-  color: var(--clr-primary);
+  color: var(--clr-text);
   font-weight: 600;
-  transition: opacity var(--transition);
+  font-size: 0.98rem;
+  transition: color var(--transition);
 }
 
 .link:hover {
-  opacity: 0.75;
+  color: var(--clr-primary);
   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -48,13 +86,11 @@
     padding: var(--section-pad-mobile);
   }
 
-  .card {
-    padding: 32px 20px;
+  .subtitle {
+    margin-top: -1.25rem;
   }
 
-  .item {
-    font-size: 0.92rem;
-    flex-direction: column;
-    gap: 4px;
+  .card {
+    padding: 32px 22px;
   }
 }

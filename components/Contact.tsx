@@ -25,19 +25,22 @@ export default function Contact() {
   return (
     <section id="contact" className={styles.section}>
       <h2 className="section-title">Contact Us</h2>
-      <div className={styles.card}>
+      <p className={styles.subtitle}>
+        Have a question or want to place an order? Reach us any of these ways.
+      </p>
+      <div className={styles.grid}>
         {DETAILS.map(({ icon, label, value, href }) => (
-          <div key={label} className={styles.item}>
+          <div key={label} className={styles.card}>
             <span className={styles.icon} aria-hidden="true">
               {icon}
             </span>
-            <strong>{label}:&nbsp;</strong>
+            <strong className={styles.label}>{label}</strong>
             {href ? (
               <a href={href} className={styles.link}>
                 {value}
               </a>
             ) : (
-              <span>{value}</span>
+              <span className={styles.value}>{value}</span>
             )}
           </div>
         ))}

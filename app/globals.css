@@ -28,6 +28,9 @@
   --container-max: 1100px;
   --section-pad: 80px 60px;
   --section-pad-mobile: 50px 20px;
+
+  --header-h: 72px;
+  --header-h-mobile: 132px;
 }
 
 /* ---- Reset ---- */

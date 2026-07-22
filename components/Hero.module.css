@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  min-height: 65vh;
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100dvh - var(--header-h));
   display: flex;
   align-items: center;
   padding: 80px 60px;
@@ -84,7 +85,8 @@
 /* ---- Mobile ---- */
 @media (max-width: 768px) {
   .hero {
-    min-height: 55vh;
+    min-height: calc(100vh - var(--header-h-mobile));
+    min-height: calc(100dvh - var(--header-h-mobile));
     padding: 60px 20px;
     text-align: center;
     align-items: flex-end;
