@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background image via next/image for optimised delivery */}
       <div className={styles.bg}>
         <Image
-          src="/images/farm.png"
+          src="/images/farm.jpg"
           alt="Satyanarayana Poultry Farm"
           fill
           priority

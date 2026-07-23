@@ -11,3 +11,6 @@ export const WHATSAPP_MESSAGE =
 export const EMAIL = "SatyanarayanaPoultry@gmail.com";
 export const ADDRESS =
   "D.Tallavalasa, Jonnada, Denkada Mandal, Vizianagaram District";
+
+export const HOURS_DISPLAY = "6:00 AM – 8:00 PM, all days";
+export const HOURS_SCHEMA = "Mo-Su 06:00-20:00";

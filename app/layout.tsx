@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { ADDRESS, EMAIL, PHONE_TEL, SITE_NAME, SITE_URL } from "@/lib/site";
+import { ADDRESS, EMAIL, HOURS_SCHEMA, PHONE_TEL, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -30,7 +30,7 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   name: SITE_NAME,
-  image: `${SITE_URL}/images/farm.png`,
+  image: `${SITE_URL}/images/farm.jpg`,
   telephone: PHONE_TEL,
   email: EMAIL,
   address: {
@@ -41,6 +41,7 @@ const localBusinessJsonLd = {
   },
   url: SITE_URL,
   priceRange: "$$",
+  openingHours: [HOURS_SCHEMA],
 };
 
 export default function RootLayout({
