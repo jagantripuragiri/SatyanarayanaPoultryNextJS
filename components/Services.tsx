@@ -1,42 +1,44 @@
-import styles from "./Services.module.css";
+import { FeatureGrid, type Feature } from "@/components/ui/feature-grid";
 
-const SERVICES = [
+const SERVICES: Feature[] = [
   {
-    icon: "🐔",
+    imageSrc: "/images/our-services/hen.png",
+    imageAlt: "Illustration of a broiler chicken",
     title: "Broiler Chicken Supply",
-    desc: "Healthy and well-maintained broiler chickens raised with care.",
+    description:
+      "Healthy and well-maintained broiler chickens raised with care.",
   },
   {
-    icon: "🚚",
+    imageSrc: "/images/our-services/delivery.png",
+    imageAlt: "Illustration of a delivery rider",
     title: "Online Delivery",
-    desc: "We supply fresh poultry products with convenient online delivery.",
+    description:
+      "We supply fresh poultry products with convenient online delivery.",
   },
   {
-    icon: "📦",
+    imageSrc: "/images/our-services/box.png",
+    imageAlt: "Illustration of a wholesale supply box",
     title: "Wholesale Supply",
-    desc: "Bulk poultry supply for markets, hotels, and businesses.",
+    description: "Bulk poultry supply for markets, hotels, and businesses.",
   },
   {
-    icon: "🌾",
+    imageSrc: "/images/our-services/farm.png",
+    imageAlt: "Illustration of the poultry farm",
     title: "Farm Consultation",
-    desc: "Visit our farm and experience our ethical farming practices first-hand.",
+    description:
+      "Visit our farm and experience our ethical farming practices first-hand.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className={styles.section}>
-      <h2 className="section-title">Our Services</h2>
-      <div className={styles.grid}>
-        {SERVICES.map(({ icon, title, desc }) => (
-          <div key={title} className={styles.card}>
-            <span className={styles.icon} aria-hidden="true">
-              {icon}
-            </span>
-            <h3 className={styles.cardTitle}>{title}</h3>
-            <p className={styles.cardDesc}>{desc}</p>
-          </div>
-        ))}
+    <section
+      id="services"
+      className="bg-background py-[50px] px-5 md:py-20 md:px-[60px]"
+    >
+      <div className="mx-auto max-w-[1100px]">
+        <h2 className="section-title">Our Services</h2>
+        <FeatureGrid features={SERVICES} layout="column" />
       </div>
     </section>
   );

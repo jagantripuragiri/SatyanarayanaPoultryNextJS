@@ -1,44 +1,41 @@
-import styles from "./WhyUs.module.css";
+import { FeatureGrid, type Feature } from "@/components/ui/feature-grid";
 
-const REASONS = [
+const REASONS: Feature[] = [
   {
-    icon: "🧼",
+    imageSrc: "/images/why-us/hygienic-farming.png",
+    imageAlt: "Illustration of a clean, well-kept farm",
     title: "Hygienic Farming",
-    desc: "Healthy poultry raised in clean, well-maintained conditions.",
+    description:
+      "Healthy poultry raised in clean, well-maintained conditions.",
   },
   {
-    icon: "💰",
+    imageSrc: "/images/why-us/fair-pricing.png",
+    imageAlt: "Illustration of cash and coins",
     title: "Fair Pricing",
-    desc: "Affordable rates with complete transparency, no hidden costs.",
+    description:
+      "Affordable rates with complete transparency, no hidden costs.",
   },
   {
-    icon: "🧑‍🌾",
+    imageSrc: "/images/why-us/experienced-team.png",
+    imageAlt: "Illustration of a team of farm workers",
     title: "Experienced Team",
-    desc: "Decades of hands-on farm management expertise.",
+    description: "Decades of hands-on farm management expertise.",
   },
   {
-    icon: "🤝",
+    imageSrc: "/images/why-us/trusted-by-vendors.png",
+    imageAlt: "Illustration of a poultry delivery vendor",
     title: "Trusted by Vendors",
-    desc: "A proven track record with local markets and businesses.",
+    description:
+      "A proven track record with local markets and businesses.",
   },
 ];
 
 export default function WhyUs() {
   return (
-    <section id="why" className={styles.section}>
-      <h2 className="section-title">Why Choose Us</h2>
-      <div className={styles.grid}>
-        {REASONS.map(({ icon, title, desc }) => (
-          <div key={title} className={styles.card}>
-            <span className={styles.icon} aria-hidden="true">
-              {icon}
-            </span>
-            <div>
-              <h3 className={styles.cardTitle}>{title}</h3>
-              <p className={styles.cardDesc}>{desc}</p>
-            </div>
-          </div>
-        ))}
+    <section id="why" className="bg-background py-[50px] px-5 md:py-20 md:px-[60px]">
+      <div className="mx-auto max-w-[1100px]">
+        <h2 className="section-title">Why Choose Us</h2>
+        <FeatureGrid features={REASONS} />
       </div>
     </section>
   );

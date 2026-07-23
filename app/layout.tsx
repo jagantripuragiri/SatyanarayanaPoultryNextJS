@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ADDRESS, EMAIL, HOURS_SCHEMA, PHONE_TEL, SITE_NAME, SITE_URL } from "@/lib/site";
 
-const poppins = Poppins({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-poppins",
+  variable: "--font-plus-jakarta",
 });
 
 export const metadata: Metadata = {
@@ -50,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en" className={plusJakarta.variable}>
       <body>
         <script
           type="application/ld+json"

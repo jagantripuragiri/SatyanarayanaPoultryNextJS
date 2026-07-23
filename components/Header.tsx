@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
 
@@ -17,9 +17,20 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <>
+      <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
       <h1 className={styles.logo}>Satyanarayana Poultry Farm</h1>
       <button
         type="button"
@@ -45,6 +56,7 @@ export default function Header() {
           </Link>
         ))}
       </nav>
-    </header>
+      </header>
+    </>
   );
 }
