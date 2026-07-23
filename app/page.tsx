@@ -6,6 +6,7 @@ import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import InquiryForm from "@/components/InquiryForm";
 import MapEmbed from "@/components/MapEmbed";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
@@ -22,6 +23,7 @@ export default function Home() {
         <Process />
         <Testimonials />
         <Contact />
+        <InquiryForm />
         <MapEmbed />
       </main>
       <Footer />

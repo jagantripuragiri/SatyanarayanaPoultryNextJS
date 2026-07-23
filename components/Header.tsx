@@ -10,8 +10,9 @@ const NAV_LINKS = [
   { href: "#why", label: "Why Us" },
   { href: "#process", label: "Process" },
   { href: "#testimonials", label: "Testimonials" },
-  { href: "#map", label: "Map" },
   { href: "#contact", label: "Contact" },
+  { href: "#inquiry", label: "Enquiry" },
+  { href: "#map", label: "Map" },
 ];
 
 export default function Header() {
