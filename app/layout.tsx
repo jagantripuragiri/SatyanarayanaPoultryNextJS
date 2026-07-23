@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   description:
     "Providing healthy poultry products with traditional values and modern farming practices. Trusted by hundreds of people in Vizianagaram District.",
   keywords: ["poultry farm", "broiler chicken", "Vizianagaram", "wholesale supply"],
+  applicationName: SITE_NAME,
   openGraph: {
     title: "Satyanarayana Poultry Farm",
     description:
@@ -23,6 +24,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
   },
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: SITE_URL,
 };
 
 const localBusinessJsonLd = {
@@ -51,6 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={plusJakarta.variable}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}

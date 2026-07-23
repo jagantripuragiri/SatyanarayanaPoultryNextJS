@@ -1,4 +1,4 @@
-export const SITE_URL = "https://satyanarayanapoultryfarmmainsite.vercel.app";
+export const SITE_URL = "https://satyanarayanapoultry.vercel.app";
 
 export const SITE_NAME = "Satyanarayana Poultry Farm";
 
