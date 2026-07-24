@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import { ADDRESS, EMAIL, HOURS_SCHEMA, PHONE_TEL, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  ADDRESS,
+  EMAIL,
+  HOURS_SCHEMA,
+  PHONE_TEL,
+  SERVICE_AREAS,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -11,15 +19,22 @@ const plusJakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Satyanarayana Poultry Farm",
+  title: "Satyanarayana Poultry Farm | Chicken Farm in Vizianagaram",
   description:
-    "Providing healthy poultry products with traditional values and modern farming practices. Trusted by hundreds of people in Vizianagaram District.",
-  keywords: ["poultry farm", "broiler chicken", "Vizianagaram", "wholesale supply"],
+    "Satyanarayana Poultry Farm is a trusted chicken farm in Vizianagaram, serving Denkada, Jonnada, Bobbili, Srikakulam & Visakhapatnam with fresh broiler chicken and wholesale poultry supply.",
+  keywords: [
+    "poultry farm in Vizianagaram",
+    "chicken farms near me",
+    "farms near me",
+    "broiler chicken supplier Vizianagaram",
+    "wholesale chicken supply Andhra Pradesh",
+    "Denkada poultry farm",
+  ],
   applicationName: SITE_NAME,
   openGraph: {
-    title: "Satyanarayana Poultry Farm",
+    title: "Satyanarayana Poultry Farm | Chicken Farm in Vizianagaram",
     description:
-      "Quality chicken trusted by hundreds of people. Hygienic, affordable & fresh.",
+      "Fresh, hygienic broiler chicken and wholesale poultry supply near Vizianagaram, Bobbili & Srikakulam.",
     type: "website",
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -49,6 +64,10 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   priceRange: "$$",
   openingHours: [HOURS_SCHEMA],
+  areaServed: SERVICE_AREAS.map((area) => ({
+    "@type": "City",
+    name: area,
+  })),
 };
 
 export default function RootLayout({
