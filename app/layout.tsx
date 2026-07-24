@@ -48,6 +48,14 @@ const websiteJsonLd = {
   url: SITE_URL,
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/farm.jpg`,
+};
+
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
@@ -58,7 +66,9 @@ const localBusinessJsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: ADDRESS,
+    addressLocality: "Denkada",
     addressRegion: "Andhra Pradesh",
+    postalCode: "535001",
     addressCountry: "IN",
   },
   url: SITE_URL,
@@ -81,6 +91,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <script
           type="application/ld+json"
